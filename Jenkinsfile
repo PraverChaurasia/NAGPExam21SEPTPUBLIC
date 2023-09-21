@@ -21,24 +21,24 @@ pipeline{
         }
       }
     }
-    stage("Artifactory"){
-      steps{
-        script{
-          def server = Artifactory.server('nagp_devTest')
-          def buildInfo = Artifactory.newBuildInfo()
-          def uploadSpec = """{
-            "files":[
-              {
-                  "pattern" : "target/*.jar",
-                  "target" : "LocalTest/"
-              }
-           ]
-          }"""
-          server.upload(uploadSpec)
-          server.publishBuildInfo(buildInfo)
-        }
-      }
-    }
+    // stage("Artifactory"){
+    //   steps{
+    //     script{
+    //       def server = Artifactory.server('nagp_devTest')
+    //       def buildInfo = Artifactory.newBuildInfo()
+    //       def uploadSpec = """{
+    //         "files":[
+    //           {
+    //               "pattern" : "target/*.jar",
+    //               "target" : "LocalTest/"
+    //           }
+    //        ]
+    //       }"""
+    //       server.upload(uploadSpec)
+    //       server.publishBuildInfo(buildInfo)
+    //     }
+    //   }
+    // }
   }
 
   post{
