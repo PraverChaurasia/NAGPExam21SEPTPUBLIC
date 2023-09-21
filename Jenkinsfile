@@ -16,7 +16,7 @@ pipeline{
     }
     stage("Sonar Qube"){
       steps{
-        withSonarQubeEnv('sonar-qube'){
+        withSonarQubeEnv('sonar_qube'){
           bat 'mvn clean verify sonar:sonar  -Dsonar.projectKey=NAGP_EXAM_pipeline_jenkinsfile -Dsonar.projectName="NAGP_EXAM_pipeline_jenkinsfile" -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_a1735be799733783e5602715b221bb73496342fe'
         }
       }
