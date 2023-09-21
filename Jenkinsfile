@@ -25,7 +25,7 @@ pipeline{
       steps{
         script{
           def server = Artifactory.server('nagp_devTest')
-          def buildInfo = Artifactory.newBuilInfo()
+          def buildInfo = Artifactory.newBuildInfo()
           def uploadSpec = """{
             "files":[
               {
